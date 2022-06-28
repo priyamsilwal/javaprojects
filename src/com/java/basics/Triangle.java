@@ -8,20 +8,29 @@ public class Triangle
 	double c = 0;
 	public void triangle()
 	{
+		try 
+		{
 		System.out.println("Insert the values of a b and c");
 		Scanner sc = new Scanner(System.in); // input values 
 		a = sc.nextDouble();
-		b = sc.nextDouble();
-		c = sc.nextDouble();
 		System.out.println("Value of a is " + a);
+		b = sc.nextDouble();
 		System.out.println("Value of b is " + b);
+		c = sc.nextDouble();		
 		System.out.println("Value of c is " + c);
+		}
+		catch(Exception e)
+		{
+			System.err.println("ERR : Your inputs are incorrect");
+		}
+		finally
+		{
+			System.out.println("We are done with the inputs. Lets see the results");
+		}
 	}
 	public void TraingleType()
 	{
-		try  // check if no exception is thrown
-		{
-			if ((a+b > c) || (a+c > b) || (b+c> a)) // condition for valid triangle
+			if ((a+b > c) && (a+c > b) && (b+c> a)) // condition for valid triangle
 			{
 				System.out.println("Its a triangle");
 				
@@ -40,15 +49,6 @@ public class Triangle
 			}
 			else
 			System.out.println("Its an invalid triangle");
-		}
-		catch (Exception e)
-		{
-			System.err.println("Error");
-		}
-		finally
-		{
-			System.out.println("Triangle is determind successfully..");
-		}
 	}
 
 	public static void main(String[] args) 
